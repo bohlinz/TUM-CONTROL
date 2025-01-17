@@ -84,22 +84,30 @@ pip install -r tum-control/Python/requirements.txt
 ```bash 
 pip install -e <acados_root>/interfaces/acados_template
 ```
-- Don't forget to add the path to the compiled shared libraries and to source ACADOS (https://docs.acados.org/python_interface/index.html):
+- Don't forget to add the path to the compiled shared libraries and to source ACADOS (https://docs.acados.org/python_interface/index.html):  
+注意: 用Bash而不是zsh, 否则cmake可能会有问题
 ```bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"<acados_root>/lib"
 export ACADOS_SOURCE_DIR="<acados_root>"
 ```
 Example:
 ```bash
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/alienware2/acados/lib"
-export ACADOS_SOURCE_DIR="/home/alienware2/acados"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/bolin/Projects/Solvers/acados/lib"
+export ACADOS_SOURCE_DIR="/home/bolin/Projects/Solvers/acados"
 ```
 - It may occur that you need to install tkinter for the matplotlib animation. 
 ```bash
 sudo apt install python3-tk
 ```
+### 其他
+还需要安装的包有  
+深度学习包 stable_baselines3
+
 ## Usage
-To start the simulation, run the main file "main.py"
+To start the simulation, run the main file "main.py"  
+
+如果想改MPC类型，在main.py中注释不同的Model_Predictive_Controller   
+Reduced_Robustified_NMPC目前有报错（Casadi输入检查发现符号问题）
 
 Simulation parameters are in Config/sim_main_params.yaml
 | simulation mode| description|
