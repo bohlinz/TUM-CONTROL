@@ -164,6 +164,7 @@ def pred_stm(veh_params_file, tire_params_file = "pacejka_params_file.yaml"):
     
     # States Derivatives
     # Source: Ge, Qiang, et al. "Numerically stable dynamic bicycle model for discrete-time control." 2021 IEEE Intelligent Vehicles Symposium Workshops (IV Workshops). IEEE, 2021.
+    # https://arxiv.org/pdf/2011.09612
     posx_dot    = vlong * cos(yaw) - vlat * sin(yaw)
     posy_dot    = vlong * sin(yaw) + vlat * cos(yaw)
     yaw_dot     = yawrate

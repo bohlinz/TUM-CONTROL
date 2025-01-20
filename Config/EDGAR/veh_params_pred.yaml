@@ -17,7 +17,7 @@ jerk_min: -8    # TBD [m/s³]  need to be validated
 jerk_max: 6     # TBD [m/s³]
 lat_acc_min: -5.886  # [m/s²] in High-Dynamic Mode                             
 lat_acc_max: 5.886   # [m/s²] in High-Dynamic Mode                                
-acc_min: -3.5 
+acc_min: -3.5  # [g] or [m/s²] 
 acc_max: 2.5                                                 
 delta_f_min: -0.610865     # steering angle [rad]
 delta_f_max: 0.610865      # steering angle [rad]

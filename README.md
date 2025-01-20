@@ -115,7 +115,6 @@ matplotlib.use('svg')  # 设置后端
 To start the simulation, run the main file "main.py"  
 
 如果想改MPC类型，在main.py中注释不同的Model_Predictive_Controller   
-Reduced_Robustified_NMPC目前有报错（Casadi输入检查发现符号问题）
 
 Simulation parameters are in Config/sim_main_params.yaml
 | simulation mode| description|

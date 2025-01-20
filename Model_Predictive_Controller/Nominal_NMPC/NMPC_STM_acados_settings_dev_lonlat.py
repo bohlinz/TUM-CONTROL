@@ -9,7 +9,7 @@ import scipy.linalg
 import numpy as np
 from casadi import vertcat, sqrt, mod, pi, if_else, MX, interp1d, Function, cos, sin, mtimes
 
-def LonLatDeviations(ego_yaw, ego_x, ego_y, ref_x,ref_y):
+def LonLatDeviations(ego_yaw, ego_x, ego_y, ref_x, ref_y):
     '''
     This method is based on rotating the deviation vectors by the negative 
     of the yaw angle of the vehicle, which aligns the deviation vectors with 
