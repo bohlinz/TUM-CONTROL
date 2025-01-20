@@ -1,7 +1,8 @@
 # Created on Tue Dec 06 17:32 2022
 
 # Author: Baha Zarrouki (baha.zarrouki@tum.de)
-
+import matplotlib
+matplotlib.use('svg')
 import matplotlib.pyplot as plt
 from matplotlib import cm, colors
 import numpy as np
@@ -493,7 +494,8 @@ def plotRes(simX, simREF, MPCX, dev_lat, dev_long, a_lat_pred, a_lat_sim, model,
     lon_acc_limit = np.array(ax_lim(simulated_velocity)).reshape(-1)
     lat_acc_limit = np.array(ay_lim(simulated_velocity)).reshape(-1)
     # plot results
-    fig = plt.figure(figsize=(15,8))
+
+    plt.figure(figsize=(15,8))
     plt.title('closed-loop simulation')
     plt.subplot(3, 3, 1)
     plt.step(t, MPC_acceleration, color='g')
@@ -504,6 +506,7 @@ def plotRes(simX, simREF, MPCX, dev_lat, dev_long, a_lat_pred, a_lat_sim, model,
     plt.ylabel('acceleration [m/s²]')
     # plt.xlabel('t [s]')
     plt.grid(True)
+    print("plot result")
     
     plt.subplot(3, 3, 3)
     plt.step(t, MPC_jerk, color='b')

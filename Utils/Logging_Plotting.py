@@ -110,7 +110,7 @@ class Logger:
             # edgar_ax.imshow(im)
             # edgar_ax.axis('off')
             plt.tight_layout()
-            plt.show(block=False)
+            # plt.show(block=False)
             self.GIF_animation_generation, self.GIF_file_name =  sim_main_params['GIF_animation_generation'], sim_main_params['GIF_file_name']
 
             if self.GIF_animation_generation:
@@ -249,7 +249,7 @@ class Logger:
         print("Average Time needed per iteration (inkl. reference traj finding): {}".format(time_needed_for_simulation / self.Nsim))
         print("Average computation time: {}".format(tcomp_sum / self.Nsim))
         print("Maximum computation time: {}".format(tcomp_max))
-        print("Average speed:{}m/s".format(np.average(vel)))
+        print("Average speed:{:.3f}m/s".format(np.average(vel)))
 
         # Performance computations & post-processing
         dev_vel             = np.abs(vel[1:] - self.simREF[:,3])
@@ -300,7 +300,8 @@ class Logger:
             # plot simulated state error: real state - measured state
             plotSimulatedStateErrors(t,sim_disturbance_state_estimation, save_logs=save_logs, log_file_ID= file_logs_name)
         if os.environ.get("ACADOS_ON_CI") is None:
-            plt.show()
+            # plt.show()
+            print("do not show the figure yet")
 
     """ Get current velocity, current lateral deviation, and current velocity
     deviation as required by the RL observation generator. """

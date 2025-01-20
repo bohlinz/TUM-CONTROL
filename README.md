@@ -85,7 +85,8 @@ pip install -r tum-control/Python/requirements.txt
 pip install -e <acados_root>/interfaces/acados_template
 ```
 - Don't forget to add the path to the compiled shared libraries and to source ACADOS (https://docs.acados.org/python_interface/index.html):  
-注意: 用Bash而不是zsh, 否则cmake可能会有问题
+注意: 用Bash而不是zsh, 否则cmake可能会有问题  
+     每次重启都需要操作
 ```bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"<acados_root>/lib"
 export ACADOS_SOURCE_DIR="<acados_root>"
@@ -99,6 +100,13 @@ export ACADOS_SOURCE_DIR="/home/bolin/Projects/Solvers/acados"
 ```bash
 sudo apt install python3-tk
 ```
+可能还有```qt.qpa.plugin: Could not load the Qt platform plugin “xcb“ in ““ even though it was found.```的问题，可以用```export QT_QPA_PLATFORM=offscreen```或者
+```
+import matplotlib
+matplotlib.use('svg')  # 设置后端
+```
+让代码跑完，从Logs里看结果。
+
 ### 其他
 还需要安装的包有  
 深度学习包 stable_baselines3
